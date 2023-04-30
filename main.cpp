@@ -5,7 +5,10 @@
 
 int main(int argc,char *argv[])
 {
-	vector<char*> srcfiles;//源文件
+	vector<char*> srcfiles;
+  if(argc > 1) {
+    for(int i = 1; i < argc; i ++) srcfiles.push_back(argv[i]);
+  }
 	if(srcfiles.size()){//存在源文件
 		Compiler compiler;
 		for(int i=0;i<srcfiles.size();i++){
